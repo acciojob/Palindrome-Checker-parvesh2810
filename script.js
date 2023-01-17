@@ -1,17 +1,20 @@
 // complete the given function
 
 function palindrome(str){
-// find the length of a string
-    const len = str.length;
+	// convert string to an array
+    const arrayValues = str.split('');
 
-    // loop through half of the string
-    for (let i = 0; i < len / 2; i++) {
+    // reverse the array values
+    const reverseArrayValues = arrayValues.reverse();
 
-        // check if first and last string are same
-        if (str[i] !== str[len - 1 - i]) {
-            return false;
-        }
+    // convert array to string
+    const reverseString = reverseArrayValues.join('');
+
+    if(str == reverseString) {
+        return true;
     }
-    return true;
+    else {
+        return false;
+    }
 }
 module.exports = palindrome
